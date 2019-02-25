@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.0.5",
+  "iOS" : [
+    {
+      "name" : "YYWebImage",
+      "hash" : "ba76c6692a02d1b692552090eec4fee34ed5a7c854052131ce4444841a0dd553"
+    }
+  ]
+}
