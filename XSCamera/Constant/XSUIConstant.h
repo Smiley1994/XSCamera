@@ -9,5 +9,9 @@
 #ifndef XSUIConstant_h
 #define XSUIConstant_h
 
+static CGFloat const CAPTURE_BOTTOM_VIEW_HEIGHT = 220.0;
+static CGFloat const CAPTURE_BOTTOM_VIEW_TOP_PADDING = 50.0;
+static CGFloat const CAPTURE_BOTTOM_VIEW_BOTTOM_PADDING = 65.0;
+
 
 #endif /* XSUIConstant_h */

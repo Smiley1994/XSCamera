@@ -44,7 +44,6 @@ static CGFloat const EDGE_PADDING = 10;
     
     
     self.titleLabel = [[UILabel alloc] init];
-    //    [self.chooseFilterButton setImage:[UIImage imageNamed:@"photo_reset"] forState:UIControlStateNormal];
     self.titleLabel.text = @"滤镜";
     self.titleLabel.font = [UIFont systemFontOfSize:16];
     self.titleLabel.textColor = HEXCOLOR(0x18cdfa);
@@ -85,11 +84,11 @@ static CGFloat const EDGE_PADDING = 10;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 4;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.dataArray.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
@@ -117,14 +116,32 @@ static CGFloat const EDGE_PADDING = 10;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XSFilterItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSFilterItemCellId forIndexPath:indexPath];
-    
+    cell.model = self.dataArray[indexPath.row];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    XSFilterModel *model = self.dataArray[indexPath.row];
+    for (XSFilterModel *model in self.dataArray) {
+        if (model.index == indexPath.row) {
+            model.selected = 1;
+        } else {
+            model.selected = 0;
+        }
+    }
+    
+    [self.collectionView reloadData];
+    
+    if ([self.delegate respondsToSelector:@selector(selectedFilterWithIndex:)]) {
+        [self.delegate selectedFilterWithIndex:indexPath.row];
+    }
 }
 
 
+- (void)setDataArray:(NSMutableArray *)dataArray {
+    _dataArray = dataArray;
+    [self.collectionView reloadData];
+}
 
 @end

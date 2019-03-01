@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Photos/Photos.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSUtils : NSObject
+
+
++ (void)saveImageToPhotoLibrary:(UIImage *)image complate:(void(^)(NSString *localIdentifier, BOOL success))complate;
+
++ (UIImage *)imageAddFilterUseGPUImage:(UIImage *)image withFilterName:(NSString *)filterName;
 
 @end
 

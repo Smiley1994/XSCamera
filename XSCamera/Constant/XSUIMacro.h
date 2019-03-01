@@ -6,6 +6,8 @@
 //  Copyright © 2016年 秦皇岛商之翼网络科技有限公司. All rights reserved.
 //
 
+#import "XSUIConstant.h"
+
 #pragma mark - Screen size
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GPUImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSFilterModel : NSObject
+
+@property (nonatomic, copy) NSString *filterName;
+@property (nonatomic, copy) NSString *className;
+//@property (nonatomic, strong) GPUImageFilter *filter;
+@property (nonatomic, assign) NSInteger selected;
+@property (nonatomic, assign) NSInteger index;
 
 @end
 

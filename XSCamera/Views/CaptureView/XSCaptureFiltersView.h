@@ -10,9 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol CaptureFiltersDelegate <NSObject>
+
+- (void)selectedFilterWithIndex: (NSInteger)index;
+
+@end
+
 @interface XSCaptureFiltersView : UIView
 
 @property (nonatomic, assign) BOOL isShow;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, weak) id<CaptureFiltersDelegate> delegate;
 
 @end
 
