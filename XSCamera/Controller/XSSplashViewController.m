@@ -21,7 +21,6 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     [self openCaptrueViewController];
-    
 }
 
 - (void)openCaptrueViewController {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0FA4EE222E1F6500F48810 /* XSPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4ED222E1F6500F48810 /* XSPhotoAlbumViewController.m */; };
+		5F0FA4F1222E70D500F48810 /* XSPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4F0222E70D500F48810 /* XSPHAsset.m */; };
+		5F0FA4F4222E71C200F48810 /* XSAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4F3222E71C200F48810 /* XSAlbumModel.m */; };
+		5F0FA4F7222F72EE00F48810 /* XSPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4F6222F72EE00F48810 /* XSPhotoCollectionViewCell.m */; };
+		5F0FA4FB222FA98300F48810 /* XSPhotoAlbumNaviagtionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4FA222FA98300F48810 /* XSPhotoAlbumNaviagtionView.m */; };
+		5F0FA4FE222FF75E00F48810 /* XSPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA4FD222FF75E00F48810 /* XSPhotoEditViewController.m */; };
 		5F101CD52226AF7500D774CB /* GPUImageColorBurnBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F101B752226AF7400D774CB /* GPUImageColorBurnBlendFilter.m */; };
 		5F101CD62226AF7500D774CB /* GPUImageTwoPassTextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F101B762226AF7400D774CB /* GPUImageTwoPassTextureSamplingFilter.m */; };
 		5F101CD72226AF7500D774CB /* GPUImageUnsharpMaskFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F101B772226AF7400D774CB /* GPUImageUnsharpMaskFilter.m */; };
@@ -210,6 +216,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F0FA4EC222E1F6500F48810 /* XSPhotoAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPhotoAlbumViewController.h; sourceTree = "<group>"; };
+		5F0FA4ED222E1F6500F48810 /* XSPhotoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPhotoAlbumViewController.m; sourceTree = "<group>"; };
+		5F0FA4EF222E70D500F48810 /* XSPHAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPHAsset.h; sourceTree = "<group>"; };
+		5F0FA4F0222E70D500F48810 /* XSPHAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPHAsset.m; sourceTree = "<group>"; };
+		5F0FA4F2222E71C200F48810 /* XSAlbumModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSAlbumModel.h; sourceTree = "<group>"; };
+		5F0FA4F3222E71C200F48810 /* XSAlbumModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSAlbumModel.m; sourceTree = "<group>"; };
+		5F0FA4F5222F72EE00F48810 /* XSPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		5F0FA4F6222F72EE00F48810 /* XSPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		5F0FA4F9222FA98300F48810 /* XSPhotoAlbumNaviagtionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPhotoAlbumNaviagtionView.h; sourceTree = "<group>"; };
+		5F0FA4FA222FA98300F48810 /* XSPhotoAlbumNaviagtionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPhotoAlbumNaviagtionView.m; sourceTree = "<group>"; };
+		5F0FA4FC222FF75E00F48810 /* XSPhotoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPhotoEditViewController.h; sourceTree = "<group>"; };
+		5F0FA4FD222FF75E00F48810 /* XSPhotoEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPhotoEditViewController.m; sourceTree = "<group>"; };
 		5F101B742226AF7400D774CB /* GPUImageBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBuffer.h; sourceTree = "<group>"; };
 		5F101B752226AF7400D774CB /* GPUImageColorBurnBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageColorBurnBlendFilter.m; sourceTree = "<group>"; };
 		5F101B762226AF7400D774CB /* GPUImageTwoPassTextureSamplingFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageTwoPassTextureSamplingFilter.m; sourceTree = "<group>"; };
@@ -626,6 +644,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0FA4F8222F72F600F48810 /* AlbumView */ = {
+			isa = PBXGroup;
+			children = (
+				5F0FA4F9222FA98300F48810 /* XSPhotoAlbumNaviagtionView.h */,
+				5F0FA4FA222FA98300F48810 /* XSPhotoAlbumNaviagtionView.m */,
+				5F0FA4F5222F72EE00F48810 /* XSPhotoCollectionViewCell.h */,
+				5F0FA4F6222F72EE00F48810 /* XSPhotoCollectionViewCell.m */,
+			);
+			path = AlbumView;
+			sourceTree = "<group>";
+		};
 		5F101B732226AF7400D774CB /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1049,6 +1078,10 @@
 				5F6F743822166BEE0045A3BC /* XSSplashViewController.m */,
 				5F6F743D22169E960045A3BC /* XSCaptureViewController.h */,
 				5F6F743E22169E960045A3BC /* XSCaptureViewController.m */,
+				5F0FA4EC222E1F6500F48810 /* XSPhotoAlbumViewController.h */,
+				5F0FA4ED222E1F6500F48810 /* XSPhotoAlbumViewController.m */,
+				5F0FA4FC222FF75E00F48810 /* XSPhotoEditViewController.h */,
+				5F0FA4FD222FF75E00F48810 /* XSPhotoEditViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1132,6 +1165,7 @@
 		5F6F7526221BA75F0045A3BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5F0FA4F8222F72F600F48810 /* AlbumView */,
 				5F6F7527221BA76D0045A3BC /* CaptureView */,
 			);
 			path = Views;
@@ -1175,6 +1209,10 @@
 			children = (
 				5F6F755B2226895B0045A3BC /* XSFilterModel.h */,
 				5F6F755C2226895B0045A3BC /* XSFilterModel.m */,
+				5F0FA4EF222E70D500F48810 /* XSPHAsset.h */,
+				5F0FA4F0222E70D500F48810 /* XSPHAsset.m */,
+				5F0FA4F2222E71C200F48810 /* XSAlbumModel.h */,
+				5F0FA4F3222E71C200F48810 /* XSAlbumModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1259,6 +1297,7 @@
 				5F101D492226AF7500D774CB /* GPUImageHazeFilter.m in Sources */,
 				5F101D832226AF7600D774CB /* GPUImageCGAColorspaceFilter.m in Sources */,
 				5F6F743922166BEE0045A3BC /* XSSplashViewController.m in Sources */,
+				5F0FA4F1222E70D500F48810 /* XSPHAsset.m in Sources */,
 				5F101D322226AF7500D774CB /* GPUImagePicture+TextureSubimage.m in Sources */,
 				5F101D052226AF7500D774CB /* GPUImageColorMatrixFilter.m in Sources */,
 				5F101CE92226AF7500D774CB /* GPUImageEmbossFilter.m in Sources */,
@@ -1287,6 +1326,7 @@
 				5F101CF92226AF7500D774CB /* GPUImageTransformFilter.m in Sources */,
 				5F101D2A2226AF7500D774CB /* GPUImageBoxBlurFilter.m in Sources */,
 				5F101D082226AF7500D774CB /* GPUImageMultiplyBlendFilter.m in Sources */,
+				5F0FA4F7222F72EE00F48810 /* XSPhotoCollectionViewCell.m in Sources */,
 				5F101D632226AF7500D774CB /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				5F101D312226AF7500D774CB /* GPUImagePicture.m in Sources */,
 				5F101D682226AF7600D774CB /* GPUImagePerlinNoiseFilter.m in Sources */,
@@ -1335,9 +1375,11 @@
 				5F101D772226AF7600D774CB /* GPUImageLuminosityBlendFilter.m in Sources */,
 				5F101D1F2226AF7500D774CB /* GPUImageDivideBlendFilter.m in Sources */,
 				5F101D382226AF7500D774CB /* GPUImageSharpenFilter.m in Sources */,
+				5F0FA4FE222FF75E00F48810 /* XSPhotoEditViewController.m in Sources */,
 				5F101D042226AF7500D774CB /* GPUImageOverlayBlendFilter.m in Sources */,
 				5F101D1C2226AF7500D774CB /* GPUImageBrightnessFilter.m in Sources */,
 				5F101D6D2226AF7600D774CB /* GPUImageNormalBlendFilter.m in Sources */,
+				5F0FA4EE222E1F6500F48810 /* XSPhotoAlbumViewController.m in Sources */,
 				5F101D392226AF7500D774CB /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				5F101D282226AF7500D774CB /* GPUImageFramebuffer.m in Sources */,
 				5F6F7520221BA1F90045A3BC /* NSArray+MASAdditions.m in Sources */,
@@ -1379,6 +1421,7 @@
 				5F101D3F2226AF7500D774CB /* GPUImageMaskFilter.m in Sources */,
 				5F101D152226AF7500D774CB /* GPUImageTextureInput.m in Sources */,
 				5F101D422226AF7500D774CB /* GPUImageSubtractBlendFilter.m in Sources */,
+				5F0FA4FB222FA98300F48810 /* XSPhotoAlbumNaviagtionView.m in Sources */,
 				5F101CE62226AF7500D774CB /* GPUImageUIElement.m in Sources */,
 				5F6F751C221BA1F90045A3BC /* ViewController+MASAdditions.m in Sources */,
 				5F101D512226AF7500D774CB /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
@@ -1398,6 +1441,7 @@
 				5F101D5E2226AF7500D774CB /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				5F101D7B2226AF7600D774CB /* GPUImagePolkaDotFilter.m in Sources */,
 				5F101D762226AF7600D774CB /* GPUImageExposureFilter.m in Sources */,
+				5F0FA4F4222E71C200F48810 /* XSAlbumModel.m in Sources */,
 				5F101D292226AF7500D774CB /* GPUImageLaplacianFilter.m in Sources */,
 				5F101D1A2226AF7500D774CB /* GPUImageLineGenerator.m in Sources */,
 				5F101CED2226AF7500D774CB /* GPUImageLevelsFilter.m in Sources */,

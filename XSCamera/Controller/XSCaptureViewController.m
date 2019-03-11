@@ -7,6 +7,7 @@
 //
 
 #import "XSCaptureViewController.h"
+#import "XSPhotoAlbumViewController.h"
 #import "XSCaptureTopView.h"
 #import "XSCaptureBottomView.h"
 #import "XSCaptureFiltersView.h"
@@ -124,6 +125,7 @@
     [self.bottomView.takingButton addTarget:self action:@selector(takingAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.resetTakingButton addTarget:self action:@selector(resetTaking:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.chooseFilterButton addTarget:self action:@selector(chooseFilterAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView.choosePhotoButton addTarget:self action:@selector(choosePhotoAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.closeFilterButton addTarget:self action:@selector(closeFiltersTools:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.bottomView];
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -149,6 +151,14 @@
 
 - (void)closeFiltersTools:(UIButton *)sender {
     [self hideFiltersView];
+}
+
+- (void)choosePhotoAction:(UIButton *)sender {
+    XSPhotoAlbumViewController *photoAilbum = [[XSPhotoAlbumViewController alloc] init];
+    [self.navigationController pushViewController:photoAilbum animated:YES];
+//    [self.navigationController presentViewController:photoAilbum animated:YES completion:^{
+//
+//    }];
 }
 
 // 显示滤镜View

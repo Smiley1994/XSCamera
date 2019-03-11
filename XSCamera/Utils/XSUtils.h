@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)imageAddFilterUseGPUImage:(UIImage *)image withFilterName:(NSString *)filterName;
 
++ (void)xs_requestImageForAsset:(PHAsset *)asset
+                withSynchronous:(BOOL)isSynchronous
+                     completion:(void (^)(UIImage *image))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

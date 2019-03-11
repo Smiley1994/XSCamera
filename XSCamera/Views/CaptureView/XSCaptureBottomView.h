@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *resetTakingButton;
 
 @property (nonatomic, strong) UIButton *chooseFilterButton;
+@property (nonatomic, strong) UIButton *choosePhotoButton;
 @property (nonatomic, strong) UIButton *closeFilterButton;
 
 - (void)takedUI;

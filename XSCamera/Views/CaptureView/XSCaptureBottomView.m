@@ -62,6 +62,17 @@
         make.top.equalTo(self.mas_top).offset(13);
     }];
     
+    self.choosePhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    [choosePhotoButton setImage:[UIImage imageNamed:@"photo_reset"] forState:UIControlStateNormal];
+    [self.choosePhotoButton setTitle:@"相册" forState:UIControlStateNormal];
+    self.choosePhotoButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [self.choosePhotoButton setTitleColor:HEXCOLOR(0x18cdfa) forState:UIControlStateNormal]; //
+    [self addSubview:self.choosePhotoButton];
+    [self.choosePhotoButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.mas_left).offset(15);
+        make.top.equalTo(self.mas_top).offset(13);
+    }];
+    
     self.closeFilterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //    [self.chooseFilterButton setImage:[UIImage imageNamed:@"photo_reset"] forState:UIControlStateNormal];
     [self.closeFilterButton setTitle:@"取消" forState:UIControlStateNormal];

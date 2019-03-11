@@ -8,6 +8,7 @@
 
 #import "XSUtils.h"
 #import "GPUImage.h"
+#import "XSUIMacro.h"
 
 @implementation XSUtils
 
@@ -42,6 +43,35 @@
     UIImage *newImage = [stillImageFilter imageFromCurrentFramebuffer];
     [[GPUImageContext sharedImageProcessingContext].framebufferCache purgeAllUnassignedFramebuffers];
     return newImage;
+}
+
+/**
+ 根据PHAsset获取图片
+ 
+ @param asset PHAsset
+ @param isSynchronous 同步-YES 异步-NO
+ @param completion 返回图片
+ */
++ (void)xs_requestImageForAsset:(PHAsset *)asset
+                withSynchronous:(BOOL)isSynchronous
+                     completion:(void (^)(UIImage *image))completion {
+    PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+    option.resizeMode = PHImageRequestOptionsResizeModeExact;//控制照片尺寸
+    option.networkAccessAllowed = YES;
+    option.synchronous = isSynchronous;
+    CGFloat width  = (CGFloat)asset.pixelWidth;
+    CGFloat height = (CGFloat)asset.pixelHeight;
+    CGFloat scale = width/height;
+    CGSize size = CGSizeMake(SCREEN_HEIGHT*scale, SCREEN_HEIGHT);
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        if (isSynchronous) {
+            if ([info[@"PHImageResultIsDegradedKey"] boolValue] == NO) {
+                completion(result);
+            }
+        } else {
+            completion(result);
+        }
+    }];
 }
 
 @end
