@@ -17,8 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+    // Override point for customization after application launch.                   
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     XSSplashViewController *splashViewController = [[XSSplashViewController alloc] init];

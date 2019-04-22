@@ -1617,6 +1617,14 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N87RCZ5LLU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XSCamera/Resource",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/GoogleUtilities",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/nanopb",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/FirebaseCore",
+				);
 				INFOPLIST_FILE = XSCamera/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1642,6 +1650,14 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N87RCZ5LLU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XSCamera/Resource",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/GoogleUtilities",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/nanopb",
+					"$(PROJECT_DIR)/XSCamera/AppDelegate/FirebaseCore",
+				);
 				INFOPLIST_FILE = XSCamera/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

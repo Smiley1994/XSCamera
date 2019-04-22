@@ -13,5 +13,68 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XSCamera/Controller/XSPhotoAlbumViewController.m"
+            timestampString = "577617242.194019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-setupSystemPhotos"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[XSPhotoAlbumViewController setupSystemPhotos]_block_invoke"
+                  moduleName = "XSCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiaosong/Jobs/Code/XSCamera/XSCamera/Controller/XSPhotoAlbumViewController.m"
+                  timestampString = "577617242.5962059"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_copy_"
+                  moduleName = "XSCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiaosong/Jobs/Code/XSCamera/XSCamera/Controller/XSPhotoAlbumViewController.m"
+                  timestampString = "577617242.600298"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_dispose_"
+                  moduleName = "XSCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiaosong/Jobs/Code/XSCamera/XSCamera/Controller/XSPhotoAlbumViewController.m"
+                  timestampString = "577617242.60432"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

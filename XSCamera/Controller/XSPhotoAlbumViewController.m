@@ -139,11 +139,11 @@ static CGFloat const SPACING = 3;
     XSPhotoCollectionViewCell *cell= [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
     cell.contentView.backgroundColor = UIColor.redColor;
     
-    XSPHAsset *xs_asset = self.photosDataArray[indexPath.row];
+//    XSPHAsset *xs_asset = self.photosDataArray[indexPath.row];
 //    cell.imageView.image = xs_asset.localImage;
-    [XSUtils xs_requestImageForAsset:xs_asset.asset withSynchronous:NO completion:^(UIImage * _Nonnull image) {
-        cell.imageView.image = image;
-    }];
+//    [XSUtils xs_requestImageForAsset:xs_asset.asset withSynchronous:NO completion:^(UIImage * _Nonnull image) {
+//        cell.imageView.image = image;
+//    }];
     
     return cell;
 }
