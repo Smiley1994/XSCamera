@@ -8,6 +8,15 @@
 
 #import "XSSplashViewController.h"
 #import "XSCaptureViewController.h"
+#import "XSIndexViewController.h"
+
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wunused-variable"
+//
+//
+//
+//#pragma clang diagnostic pop
+
 
 @interface XSSplashViewController ()
 
@@ -20,13 +29,21 @@
     [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [self openCaptrueViewController];
+//    [self showCaptrueViewController];
+    
+    [self showIndexViewController];
 }
 
-- (void)openCaptrueViewController {
+- (void)showCaptrueViewController {
     XSCaptureViewController *captrueViewController = [[XSCaptureViewController alloc] init];
     UINavigationController *captrueNavigationController = [[UINavigationController alloc] initWithRootViewController:captrueViewController];
     [UIApplication sharedApplication].keyWindow.rootViewController = captrueNavigationController;
+}
+
+- (void)showIndexViewController {
+    XSIndexViewController *indexViewController = [[XSIndexViewController alloc] init];
+    UINavigationController *indexNavigationController = [[UINavigationController alloc] initWithRootViewController:indexViewController];
+    [UIApplication sharedApplication].keyWindow.rootViewController = indexNavigationController;
 }
 
 

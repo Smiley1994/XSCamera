@@ -191,6 +191,7 @@
 		5F101D842226AF7600D774CB /* GPUImageDarkenBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F101CD42226AF7500D774CB /* GPUImageDarkenBlendFilter.m */; };
 		5F101D872226B00500D774CB /* XSGPUImageBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F101D862226B00400D774CB /* XSGPUImageBeautyFilter.m */; };
 		5F101D892226B90300D774CB /* XSFilters.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F101D882226B90300D774CB /* XSFilters.json */; };
+		5F146D1422B78CD900FE3A0A /* XSIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F146D1322B78CD900FE3A0A /* XSIndexViewController.m */; };
 		5F6F741E22165C230045A3BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F741D22165C230045A3BC /* AppDelegate.m */; };
 		5F6F742622165C250045A3BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6F742522165C250045A3BC /* Assets.xcassets */; };
 		5F6F742C22165C250045A3BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F742B22165C250045A3BC /* main.m */; };
@@ -581,6 +582,8 @@
 		5F101D852226B00400D774CB /* XSGPUImageBeautyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSGPUImageBeautyFilter.h; sourceTree = "<group>"; };
 		5F101D862226B00400D774CB /* XSGPUImageBeautyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSGPUImageBeautyFilter.m; sourceTree = "<group>"; };
 		5F101D882226B90300D774CB /* XSFilters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSFilters.json; sourceTree = "<group>"; };
+		5F146D1222B78CD900FE3A0A /* XSIndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSIndexViewController.h; sourceTree = "<group>"; };
+		5F146D1322B78CD900FE3A0A /* XSIndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSIndexViewController.m; sourceTree = "<group>"; };
 		5F6F741922165C230045A3BC /* XSCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XSCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6F741C22165C230045A3BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F6F741D22165C230045A3BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1082,6 +1085,8 @@
 				5F0FA4ED222E1F6500F48810 /* XSPhotoAlbumViewController.m */,
 				5F0FA4FC222FF75E00F48810 /* XSPhotoEditViewController.h */,
 				5F0FA4FD222FF75E00F48810 /* XSPhotoEditViewController.m */,
+				5F146D1222B78CD900FE3A0A /* XSIndexViewController.h */,
+				5F146D1322B78CD900FE3A0A /* XSIndexViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1109,16 +1114,8 @@
 			children = (
 				5F101D882226B90300D774CB /* XSFilters.json */,
 				5F6F742522165C250045A3BC /* Assets.xcassets */,
-				5F6F743C22169E2B0045A3BC /* Images */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		5F6F743C22169E2B0045A3BC /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		5F6F74FF221BA1A20045A3BC /* ThirdParty */ = {
@@ -1304,6 +1301,7 @@
 				5F101CFB2226AF7500D774CB /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				5F101D1E2226AF7500D774CB /* GPUImageStretchDistortionFilter.m in Sources */,
 				5F101D672226AF7600D774CB /* GPUImageVideoCamera.m in Sources */,
+				5F146D1422B78CD900FE3A0A /* XSIndexViewController.m in Sources */,
 				5F101CD62226AF7500D774CB /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				5F101D192226AF7500D774CB /* GPUImageSepiaFilter.m in Sources */,
 				5F101D222226AF7500D774CB /* GPUImagePosterizeFilter.m in Sources */,
@@ -1635,7 +1633,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XSCamera/Resource/Library/GPUImage/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ann9.XSCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smileysun.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wno-unused-variable";
@@ -1668,7 +1666,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XSCamera/Resource/Library/GPUImage/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ann9.XSCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smileysun.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wno-unused-variable";

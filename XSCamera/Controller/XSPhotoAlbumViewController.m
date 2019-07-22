@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UICollectionView *photosCollectionView;
 @property (nonatomic, strong) NSMutableArray *photosDataArray;
+@property (nonatomic, strong) PHFetchResult<PHAsset *> *assets;
+@property (nonatomic, strong) PHImageRequestOptions *options;
 
 
 @end
@@ -36,7 +38,8 @@ static CGFloat const SPACING = 3;
     self.view.backgroundColor = UIColor.whiteColor;
     self.photosDataArray = [[NSMutableArray alloc] init];
     
-    [self setupSystemPhotos];
+//    [self setupSystemPhotos];
+    [self setupAssets];
     [self createCollectionView];
     [self createNavigationView];
     
@@ -70,36 +73,44 @@ static CGFloat const SPACING = 3;
     }];
 }
 
+- (void)setupAssets {
+    self.options = [[PHImageRequestOptions alloc] init];
+    self.options.resizeMode = PHImageRequestOptionsResizeModeFast;
+//    self.options.deliveryMode
+    self.options.synchronous = NO;
+    
+    self.assets = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
+    
+    [self.photosCollectionView reloadData];
+}
+
 - (void)setupSystemPhotos {
     
     __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    
+    __block NSArray<XSPHAsset *> *assets;
+    __block XSAlbumModel *xs_albumModel;
+    [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        
-        //
-        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-        
-        __block NSArray<XSPHAsset *> *assets;
-        __block XSAlbumModel *xs_albumModel;
-        [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (collection.assetCollectionSubtype != 202 && collection.assetCollectionSubtype < 212) {
-                //获取所有照片
-                assets = [strongSelf setupAssetsInAssetCollection:collection ascending:NO];
-                if (assets.count > 0) {
-                    xs_albumModel = [[XSAlbumModel alloc] init];
-                    xs_albumModel.title = collection.localizedTitle;
-                    xs_albumModel.assets = assets;
-                    xs_albumModel.assetCollection = collection;
-                    xs_albumModel.count = assets.count;
-                    [strongSelf.photosDataArray addObject:xs_albumModel];
-                }
+        if (collection.assetCollectionSubtype != 202 && collection.assetCollectionSubtype < 212) {
+            //获取所有照片
+            assets = [strongSelf setupAssetsInAssetCollection:collection ascending:NO];
+            if (assets.count > 0) {
+                xs_albumModel = [[XSAlbumModel alloc] init];
+                NSLog(@"相簿名:%@", collection.localizedTitle);
+                xs_albumModel.title = collection.localizedTitle;
+                xs_albumModel.assets = assets;
+                xs_albumModel.assetCollection = collection;
+                xs_albumModel.count = assets.count;
+                [strongSelf.photosDataArray addObject:xs_albumModel];
             }
-        }];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [strongSelf.photosCollectionView reloadData];
-        });
-        
+        }
+    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.photosCollectionView reloadData];
     });
 }
 
@@ -127,8 +138,13 @@ static CGFloat const SPACING = 3;
     return result;
 }
 
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 4;
+//}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.photosDataArray.count;
+    
+    return  self.assets.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -138,20 +154,24 @@ static CGFloat const SPACING = 3;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XSPhotoCollectionViewCell *cell= [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
     cell.contentView.backgroundColor = UIColor.redColor;
-    
-//    XSPHAsset *xs_asset = self.photosDataArray[indexPath.row];
-//    cell.imageView.image = xs_asset.localImage;
-//    [XSUtils xs_requestImageForAsset:xs_asset.asset withSynchronous:NO completion:^(UIImage * _Nonnull image) {
-//        cell.imageView.image = image;
+//    [[PHImageManager defaultManager] requestImageDataForAsset:self.assets[indexPath.row] options:self.options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+//
+//        cell.imageView.image = [[UIImage alloc] initWithData:imageData];
 //    }];
+    
+    [[PHImageManager defaultManager] requestImageForAsset:self.assets[indexPath.row] targetSize:CGSizeMake((SCREEN_WIDTH - SPACING * 5) / 4, (SCREEN_WIDTH - SPACING * 5) / 3) contentMode:PHImageContentModeDefault options:self.options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        cell.imageView.contentMode = UIViewContentModeCenter;
+        cell.imageView.image = result;
+    }];
+//
     
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    XSPhotoEditViewController *edit = [[XSPhotoEditViewController alloc] init];
-    [self.navigationController pushViewController:edit animated:YES];
+//    XSPhotoEditViewController *edit = [[XSPhotoEditViewController alloc] init];
+//    [self.navigationController pushViewController:edit animated:YES];
 }
 
 

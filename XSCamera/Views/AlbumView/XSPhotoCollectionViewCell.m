@@ -7,6 +7,7 @@
 //
 
 #import "XSPhotoCollectionViewCell.h"
+#import "Masonry.h"
 
 @interface XSPhotoCollectionViewCell ()
 
@@ -18,6 +19,11 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.imageView = [[UIImageView alloc] init];
+        [self.contentView addSubview:self.imageView];
+        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
         
     }
     return self;
